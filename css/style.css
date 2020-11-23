@@ -1,6 +1,6 @@
 .container {
   margin: 0 auto;
-  width: 1200px;
+  max-width: 1200px;
 }
 .wrap {
   background-color: #aa0601;
@@ -88,15 +88,15 @@ a:hover {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
 }
 .banner-title {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
+  height: 100%;
 }
-
+.banner-title div {
+  display: flex;
+}
 .banner-title h2 {
   font-size: 64px;
   line-height: 80px;
@@ -168,6 +168,7 @@ a:hover {
   font-size: 19px;
   width: 100%;
   padding: 20px;
+  cursor: pointer;
 }
 .cards li h3 {
   font-size: 24px;
@@ -181,16 +182,17 @@ a:hover {
   height: 224px;
 }
 .info {
+  padding: 16px 24px;
   border: 1px solid #00000020;
 }
 .info li {
+  width: 100%;
   display: flex;
-  margin: 16px 24px;
+  margin-bottom: 8px;
 }
 .info li p {
   font-size: 20px;
   line-height: 30px;
-  width: 260px;
 }
 .info li img {
   width: 21px;
@@ -200,7 +202,7 @@ a:hover {
 }
 @media (max-width: 768px) {
   .container {
-    width: 690px;
+    max-width: 690px;
   }
   .areaSelect label {
     font-size: 16px;
@@ -230,7 +232,6 @@ a:hover {
   .info li p {
     font-size: 14px;
     line-height: 21px;
-    width: 250px;
   }
   .info li img {
     width: 20px;
@@ -244,7 +245,7 @@ a:hover {
 }
 @media (max-width: 375px) {
   .container {
-    width: 345px;
+    max-width: 345px;
   }
 
   .areaSelect label {
@@ -259,7 +260,6 @@ a:hover {
 .footer-title {
   font-size: 16px;
   line-height: 24px;
-  padding-top: 48px;
 }
 .contact-info {
   padding-bottom: 22px;
@@ -279,7 +279,6 @@ a:hover {
 .footer-buttom {
   display: flex;
   justify-content: space-between;
-  padding-bottom: 40px;
 }
 .terms {
   display: flex;
@@ -307,10 +306,12 @@ a:hover {
 .icons li img {
   max-width: 100%;
 }
+.footer {
+  padding: 40px;
+}
 .footer-title {
   display: flex;
   justify-content: space-between;
-  padding-top: 48px;
 }
 @media (max-width: 768px) {
   .copyright img {
@@ -336,10 +337,8 @@ a:hover {
 }
 @media (max-width: 375px) {
   .footer {
+    padding: 9px;
     position: relative;
-  }
-  .footer-title {
-    padding-top: 0 !important;
   }
   .footer-title .menu {
     display: none;
@@ -347,7 +346,7 @@ a:hover {
   .icons {
     position: absolute;
     right: 0;
-    top: 25px;
+    top: 35px;
   }
   .copyright {
     justify-content: start;
@@ -357,8 +356,7 @@ a:hover {
     position: absolute;
     width: 46px;
     right: 9px;
-    bottom: 40px;
-    margin-right: 9px;
+    bottom: 10px;
   }
   .copyright p {
     font-size: 14px;
