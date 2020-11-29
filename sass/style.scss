@@ -1,0 +1,632 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import 'reset';
+@import 'variable';
+
+.container {
+  margin: 0 auto;
+  max-width: 1100px;
+  @include large {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  @include pad {
+    max-width: 768px;
+  }
+  @include mobile {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  @include small {
+    max-width: 375px;
+  }
+}
+.wrap {
+  background-color: $red;
+  color: $white;
+}
+a {
+  color: $white;
+}
+a:hover {
+  color: grey;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px;
+  line-height: 30px;
+  @include mobile {
+    flex-direction: column;
+    align-items: center;
+  }
+  h1 {
+    margin-left: 80px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    @include pad {
+      margin-left: 39px;
+    }
+    @include mobile {
+      margin-left: 0;
+    }
+    a {
+      display: block;
+      width: 80px;
+      height: 49px;
+      background-image: url('https://hexschool.github.io/webLayoutTraining1st/week3/logo.png');
+      text-indent: 101%;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+  }
+}
+.menu {
+  width: 410px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 80px;
+  @include pad {
+    margin-right: 39px;
+  }
+  @include mobile {
+    margin-right: 0px;
+  }
+  @include small {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  li {
+    @include small {
+      border: 1px solid #ffffff;
+      padding: 8px 54px;
+    }
+    a {
+      display: block;
+      color: white;
+      @include small {
+        width: 80px;
+      }
+      &:hover {
+        color: gray;
+      }
+      img {
+        @include small {
+          width: 48px;
+          height: 29.5px;
+        }
+      }
+    }
+  }
+}
+.product-menu {
+  font-size: 42px;
+  line-height: 63px;
+  font-weight: 500;
+  display: flex;
+  justify-content: space-around;
+  @include desktop {
+    font-size: 32px;
+    line-height: 55px;
+  }
+  @include pad {
+    font-size: 28px;
+    line-height: 42px;
+  }
+  @include mobile {
+    font-size: 20px;
+    line-height: 30px;
+  }
+  @include small {
+    font-size: 14px;
+    line-height: 19px;
+  }
+  li {
+    flex: 1;
+    a {
+      border: 1px solid #dcdcdc;
+      display: block;
+      padding-bottom: 24px;
+      padding-top: 24px;
+      text-align: center;
+      color: $block;
+      img {
+        display: inline-block;
+        vertical-align: sub;
+        margin-right: 8px;
+        max-width: 100%;
+        @include desktop {
+          max-width: 40px;
+          max-height: 40px;
+        }
+        @include pad {
+          max-width: 32px;
+          max-height: 32px;
+        }
+        @include mobile {
+          max-width: 24px;
+          max-height: 24px;
+        }
+        @include small {
+          max-width: 15px;
+          max-height: 12px;
+          margin-right: 4px;
+        }
+      }
+    }
+    &:first-child {
+      a {
+        padding-bottom: 8px;
+        border-bottom: 16px solid red;
+        img {
+          vertical-align: unset;
+        }
+      }
+    }
+  }
+}
+.product {
+  &-banner {
+    display: flex;
+    height: 309px;
+    margin-bottom: 88px;
+    @include pad {
+      margin-bottom: 30px;
+    }
+    @include small {
+      height: 144px;
+    }
+
+    div {
+      background-position: center;
+      background-size: cover;
+      width: 50%;
+    }
+    div:first-child {
+      background-image: url('https://hexschool.github.io/webLayoutTraining1st/week3/banner-1.png');
+      margin-right: 30px;
+      @include desktop {
+        margin-right: 15px;
+      }
+      @include pad {
+        margin-right: 0;
+      }
+    }
+    div:last-child {
+      background-image: url('https://hexschool.github.io/webLayoutTraining1st/week3/banner-2.png');
+    }
+  }
+  &-title {
+    text-align: center;
+    font-weight: 500;
+    margin-bottom: 40px;
+    @include pad {
+      margin-bottom: 32px;
+    }
+    @include small {
+      margin-bottom: 20px;
+    }
+    h2 {
+      font-size: 42px;
+      line-height: 63px;
+      @include pad {
+        font-size: 32px;
+        line-height: 48px;
+      }
+      @include small {
+        font-size: 20px;
+        line-height: 26px;
+      }
+    }
+    h3 {
+      font-size: 32px;
+      line-height: 48px;
+      @include pad {
+        font-size: 24px;
+        line-height: 36px;
+      }
+      @include small {
+        font-size: 16px;
+        line-height: 22px;
+      }
+    }
+  }
+  &-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    li {
+      margin-bottom: 104px;
+      @include pad {
+        margin-bottom: 72px;
+      }
+      @include small {
+        margin-bottom: 32px;
+      }
+      img {
+        width: 255px;
+        height: 164px;
+        @include pad {
+          width: 330px;
+        }
+        @include small {
+          width: 345px;
+        }
+      }
+      .item {
+        display: flex;
+        justify-content: space-between;
+        font-size: 24px;
+        line-height: 36px;
+        font-weight: 500;
+        @include small {
+          font-size: 16px;
+          line-height: 30px;
+        }
+        p:first-child {
+          color: $block;
+        }
+        p:last-child {
+          color: $red;
+        }
+        &-color {
+          display: flex;
+          div {
+            width: 24px;
+            height: 24px;
+            border-radius: 4px;
+            @include small {
+              width: 16px;
+              height: 16px;
+            }
+          }
+          div:first-child {
+            background: #5f3e2d;
+            margin-right: 8px;
+            @include small {
+              margin-right: 4px;
+            }
+          }
+          div:last-child {
+            background: #b75929;
+          }
+        }
+      }
+    }
+  }
+}
+.banner {
+  background: url($lg-banner) no-repeat;
+  height: 304px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  @include pad {
+    background: url($md-banner);
+    background-position: 30% 30%;
+    background-size: 150%;
+  }
+  @include small {
+    height: 143px;
+    background-position: 10% 30%;
+  }
+  &-title {
+    display: flex;
+    align-items: flex-end;
+    height: 100%;
+    div {
+      display: flex;
+    }
+    h2 {
+      font-size: 64px;
+      line-height: 80px;
+      font-weight: bold;
+      @include pad {
+        font-size: 48px;
+      }
+      @include small {
+        font-size: 28px;
+        line-height: 40px;
+      }
+    }
+    img {
+      margin-left: 24px;
+      @include pad {
+        transform: scale(0.8);
+        margin-left: 16px;
+      }
+      @include small {
+        transform: scale(0.5);
+        margin-left: 0;
+      }
+    }
+  }
+}
+
+.areaSelect {
+  margin-top: 16px;
+  margin-bottom: 32px;
+  label {
+    font-size: 24px;
+    line-height: 30px;
+    margin-right: 20px;
+    @include pad {
+      font-size: 16px;
+    }
+    @include small {
+      font-size: 14px;
+      margin-right: 12px;
+    }
+  }
+  select {
+    font-size: 18px;
+    line-height: 24px;
+    width: 324px;
+    color: #495057;
+    opacity: 0.75;
+    padding: 10px 0 10px 18px;
+    @include pad {
+      font-size: 16px;
+      width: 273px;
+    }
+    @include small {
+      font-size: 14px;
+      width: 260px;
+    }
+  }
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  color: #212529;
+  @include large {
+    margin-bottom: 84px;
+  }
+  @include mobile {
+    margin-bottom: 40px;
+  }
+  li {
+    width: 30%;
+    margin-bottom: 32px;
+    @include large {
+      width: 48%;
+    }
+    @include mobile {
+      width: 100%;
+      margin-bottom: 16px;
+    }
+    img {
+      width: 100%;
+    }
+    .info {
+      padding: 16px 24px;
+      border: 1px solid #00000020;
+      @include pad {
+        padding: 16px;
+      }
+      li {
+        width: 100%;
+        display: flex;
+        margin-bottom: 8px;
+        @include pad {
+          margin: 8px;
+        }
+        p {
+          font-size: 20px;
+          line-height: 30px;
+          a {
+            color: $block;
+          }
+          @include pad {
+            font-size: 14px;
+            line-height: 21px;
+          }
+        }
+        img {
+          width: 21px;
+          height: 21px;
+          margin-top: 5px;
+          margin-right: 12px;
+          @include pad {
+            width: 20px;
+            height: 20px;
+            margin-top: 0;
+          }
+        }
+      }
+    }
+    button {
+      background: #000;
+      color: #fff;
+      font-size: 19px;
+      width: 100%;
+      padding: 20px;
+      cursor: pointer;
+      @include pad {
+        font-size: 14px;
+        padding: 16px;
+      }
+    }
+    h3 {
+      font-size: 24px;
+      line-height: 36px;
+      border: 1px solid #00000020;
+      padding: 12px 24px;
+      @include pad {
+        font-size: 16px;
+        line-height: 24px;
+        padding: 8px 202px 8px 8x;
+      }
+    }
+  }
+}
+.page-btn {
+  display: flex;
+  width: 380px;
+  margin: 0 auto;
+  font-size: 19px;
+  line-height: 29px;
+  font-weight: 500;
+  margin-bottom: 165px;
+  @include pad {
+    margin-bottom: 104px;
+  }
+  @include small {
+    width: 240px;
+    font-size: 12px;
+    line-height: 18px;
+    margin-bottom: 56px;
+  }
+  li {
+    a {
+      display: block;
+      padding: 10px 14px;
+      border: 1px solid #555555;
+      color: #555555;
+      @include small {
+        padding: 8px;
+      }
+      &:hover {
+        background-color: $block;
+        color: $white;
+      }
+    }
+  }
+  li:nth-child(3) {
+    a {
+      background-color: $block;
+      color: $white;
+    }
+  }
+  li:last-child {
+    a {
+      background-color: #f2f2f2;
+      &:hover {
+        background-color: $block;
+      }
+    }
+  }
+}
+.footer {
+  padding: 40px;
+  @include small {
+    padding: 9px;
+    position: relative;
+  }
+  &-title {
+    font-size: 16px;
+    line-height: 24px;
+    display: flex;
+    justify-content: space-between;
+    .menu {
+      @include mobile {
+        display: none;
+      }
+    }
+    .icons {
+      display: flex;
+      @include mobile {
+        position: absolute;
+        right: 0;
+      }
+      @include small {
+        top: 35px;
+      }
+      li {
+        margin-left: 32px;
+        @include pad {
+          margin-left: 0;
+        }
+        img {
+          max-width: 100%;
+          @include pad {
+            max-width: 50%;
+          }
+        }
+      }
+    }
+  }
+  .contact-info {
+    padding-bottom: 22px;
+    border-bottom: 1px solid #fff;
+    @include pad {
+      margin-top: 24px;
+    }
+    li {
+      a {
+        font-size: 36px;
+        line-height: 54px;
+        margin-left: 20px;
+        @include pad {
+          font-size: 20px;
+          line-height: 30px;
+          margin-left: 15px;
+        }
+        @include mobile {
+          font-size: 16px;
+          margin-left: 7px;
+        }
+      }
+      img {
+        width: 100%;
+        max-width: 36px;
+        vertical-align: middle;
+        @include pad {
+          width: 18px;
+        }
+      }
+    }
+  }
+  &-buttom {
+    display: flex;
+    justify-content: space-between;
+    @include mobile {
+      flex-direction: column;
+    }
+    .copyright {
+      margin-top: 24px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      @include mobile {
+        justify-content: start;
+      }
+      img {
+        margin-right: 38px;
+        @include pad {
+          display: none;
+        }
+        @include mobile {
+          display: block;
+          position: absolute;
+          width: 46px;
+          right: 9px;
+          bottom: 10px;
+        }
+      }
+      p {
+        @include mobile {
+          font-size: 14px;
+        }
+      }
+    }
+    .terms {
+      display: flex;
+      margin-top: 40px;
+      @include mobile {
+        flex-direction: column;
+        margin: 0;
+      }
+      li {
+        padding-left: 62px;
+        @include mobile {
+          margin: 8px 0;
+          padding-left: 0;
+        }
+      }
+    }
+  }
+}

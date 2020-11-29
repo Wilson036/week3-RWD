@@ -1,14 +1,180 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap");
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
 .container {
   margin: 0 auto;
-  width: 1200px;
+  max-width: 1100px;
 }
+@media (max-width: 1024px) {
+  .container {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+@media (max-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
+@media (max-width: 568px) {
+  .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+@media (max-width: 375px) {
+  .container {
+    max-width: 375px;
+  }
+}
+
 .wrap {
   background-color: #aa0601;
-  color: white;
+  color: #fbf2f2;
 }
+
 a {
-  color: white;
+  color: #fbf2f2;
 }
+
 a:hover {
   color: grey;
 }
@@ -19,19 +185,37 @@ a:hover {
   font-size: 20px;
   line-height: 30px;
 }
+@media (max-width: 568px) {
+  .header {
+    flex-direction: column;
+    align-items: center;
+  }
+}
 .header h1 {
   margin-left: 80px;
   padding-top: 30px;
   padding-bottom: 30px;
-}
-.header h1 a {
-  display: block;
 }
 @media (max-width: 768px) {
   .header h1 {
     margin-left: 39px;
   }
 }
+@media (max-width: 568px) {
+  .header h1 {
+    margin-left: 0;
+  }
+}
+.header h1 a {
+  display: block;
+  width: 80px;
+  height: 49px;
+  background-image: url("https://hexschool.github.io/webLayoutTraining1st/week3/logo.png");
+  text-indent: 101%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
 .menu {
   width: 410px;
   display: flex;
@@ -39,85 +223,302 @@ a:hover {
   align-items: center;
   margin-right: 80px;
 }
-.menu li a {
-  display: block;
-  color: white;
-}
-.menu li a:hover {
-  color: gray;
-}
 @media (max-width: 768px) {
   .menu {
     margin-right: 39px;
   }
 }
-@media (max-width: 576px) {
-  .header {
-    flex-direction: column;
-    align-items: center;
-  }
-  .header h1 {
-    margin-left: 0;
-  }
+@media (max-width: 568px) {
   .menu {
     margin-right: 0px;
   }
 }
-
 @media (max-width: 375px) {
   .menu {
     flex-wrap: wrap;
     justify-content: center;
   }
+}
+@media (max-width: 375px) {
   .menu li {
     border: 1px solid #ffffff;
     padding: 8px 54px;
   }
+}
+.menu li a {
+  display: block;
+  color: white;
+}
+@media (max-width: 375px) {
   .menu li a {
     width: 80px;
   }
-  .header h1 a img {
+}
+.menu li a:hover {
+  color: gray;
+}
+@media (max-width: 375px) {
+  .menu li a img {
     width: 48px;
     height: 29.5px;
   }
 }
+
+.product-menu {
+  font-size: 42px;
+  line-height: 63px;
+  font-weight: 500;
+  display: flex;
+  justify-content: space-around;
+}
+@media (max-width: 992px) {
+  .product-menu {
+    font-size: 32px;
+    line-height: 55px;
+  }
+}
+@media (max-width: 768px) {
+  .product-menu {
+    font-size: 28px;
+    line-height: 42px;
+  }
+}
+@media (max-width: 568px) {
+  .product-menu {
+    font-size: 20px;
+    line-height: 30px;
+  }
+}
+@media (max-width: 375px) {
+  .product-menu {
+    font-size: 14px;
+    line-height: 19px;
+  }
+}
+.product-menu li {
+  flex: 1;
+}
+.product-menu li a {
+  border: 1px solid #dcdcdc;
+  display: block;
+  padding-bottom: 24px;
+  padding-top: 24px;
+  text-align: center;
+  color: #111619;
+}
+.product-menu li a img {
+  display: inline-block;
+  vertical-align: sub;
+  margin-right: 8px;
+  max-width: 100%;
+}
+@media (max-width: 992px) {
+  .product-menu li a img {
+    max-width: 40px;
+    max-height: 40px;
+  }
+}
+@media (max-width: 768px) {
+  .product-menu li a img {
+    max-width: 32px;
+    max-height: 32px;
+  }
+}
+@media (max-width: 568px) {
+  .product-menu li a img {
+    max-width: 24px;
+    max-height: 24px;
+  }
+}
+@media (max-width: 375px) {
+  .product-menu li a img {
+    max-width: 15px;
+    max-height: 12px;
+    margin-right: 4px;
+  }
+}
+.product-menu li:first-child a {
+  padding-bottom: 8px;
+  border-bottom: 16px solid red;
+}
+.product-menu li:first-child a img {
+  vertical-align: unset;
+}
+
+.product-banner {
+  display: flex;
+  height: 309px;
+  margin-bottom: 88px;
+}
+@media (max-width: 768px) {
+  .product-banner {
+    margin-bottom: 30px;
+  }
+}
+@media (max-width: 375px) {
+  .product-banner {
+    height: 144px;
+  }
+}
+.product-banner div {
+  background-position: center;
+  background-size: cover;
+  width: 50%;
+}
+.product-banner div:first-child {
+  background-image: url("https://hexschool.github.io/webLayoutTraining1st/week3/banner-1.png");
+  margin-right: 30px;
+}
+@media (max-width: 992px) {
+  .product-banner div:first-child {
+    margin-right: 15px;
+  }
+}
+@media (max-width: 768px) {
+  .product-banner div:first-child {
+    margin-right: 0;
+  }
+}
+.product-banner div:last-child {
+  background-image: url("https://hexschool.github.io/webLayoutTraining1st/week3/banner-2.png");
+}
+.product-title {
+  text-align: center;
+  font-weight: 500;
+  margin-bottom: 40px;
+}
+@media (max-width: 768px) {
+  .product-title {
+    margin-bottom: 32px;
+  }
+}
+@media (max-width: 375px) {
+  .product-title {
+    margin-bottom: 20px;
+  }
+}
+.product-title h2 {
+  font-size: 42px;
+  line-height: 63px;
+}
+@media (max-width: 768px) {
+  .product-title h2 {
+    font-size: 32px;
+    line-height: 48px;
+  }
+}
+@media (max-width: 375px) {
+  .product-title h2 {
+    font-size: 20px;
+    line-height: 26px;
+  }
+}
+.product-title h3 {
+  font-size: 32px;
+  line-height: 48px;
+}
+@media (max-width: 768px) {
+  .product-title h3 {
+    font-size: 24px;
+    line-height: 36px;
+  }
+}
+@media (max-width: 375px) {
+  .product-title h3 {
+    font-size: 16px;
+    line-height: 22px;
+  }
+}
+.product-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.product-list li {
+  margin-bottom: 104px;
+}
+@media (max-width: 768px) {
+  .product-list li {
+    margin-bottom: 72px;
+  }
+}
+@media (max-width: 375px) {
+  .product-list li {
+    margin-bottom: 32px;
+  }
+}
+.product-list li img {
+  width: 255px;
+  height: 164px;
+}
+@media (max-width: 768px) {
+  .product-list li img {
+    width: 330px;
+  }
+}
+@media (max-width: 375px) {
+  .product-list li img {
+    width: 345px;
+  }
+}
+.product-list li .item {
+  display: flex;
+  justify-content: space-between;
+  font-size: 24px;
+  line-height: 36px;
+  font-weight: 500;
+}
+@media (max-width: 375px) {
+  .product-list li .item {
+    font-size: 16px;
+    line-height: 30px;
+  }
+}
+.product-list li .item p:first-child {
+  color: #111619;
+}
+.product-list li .item p:last-child {
+  color: #aa0601;
+}
+.product-list li .item-color {
+  display: flex;
+}
+.product-list li .item-color div {
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+}
+@media (max-width: 375px) {
+  .product-list li .item-color div {
+    width: 16px;
+    height: 16px;
+  }
+}
+.product-list li .item-color div:first-child {
+  background: #5f3e2d;
+  margin-right: 8px;
+}
+@media (max-width: 375px) {
+  .product-list li .item-color div:first-child {
+    margin-right: 4px;
+  }
+}
+.product-list li .item-color div:last-child {
+  background: #b75929;
+}
+
 .banner {
-  background: url('https://hexschool.github.io/webLayoutTraining1st/week3/qa.png')
-    no-repeat;
+  background: url("https://hexschool.github.io/webLayoutTraining1st/week3/qa.png") no-repeat;
   height: 304px;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-}
-.banner-title {
-  display: flex;
-  align-items: center;
-}
-
-.banner-title h2 {
-  font-size: 64px;
-  line-height: 80px;
-  font-weight: bold;
-}
-.banner-title img {
-  margin-left: 24px;
 }
 @media (max-width: 768px) {
   .banner {
-    background: url('https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/master/week3/blog-4.png');
+    background: url("https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/master/week3/blog-4.png");
     background-position: 30% 30%;
     background-size: 150%;
-  }
-
-  .banner-title h2 {
-    font-size: 48px;
-  }
-  .banner-title img {
-    transform: scale(0.8);
-    margin-left: 16px;
   }
 }
 @media (max-width: 375px) {
@@ -125,24 +526,66 @@ a:hover {
     height: 143px;
     background-position: 10% 30%;
   }
+}
+.banner-title {
+  display: flex;
+  align-items: flex-end;
+  height: 100%;
+}
+.banner-title div {
+  display: flex;
+}
+.banner-title h2 {
+  font-size: 64px;
+  line-height: 80px;
+  font-weight: bold;
+}
+@media (max-width: 768px) {
+  .banner-title h2 {
+    font-size: 48px;
+  }
+}
+@media (max-width: 375px) {
   .banner-title h2 {
     font-size: 28px;
     line-height: 40px;
   }
+}
+.banner-title img {
+  margin-left: 24px;
+}
+@media (max-width: 768px) {
+  .banner-title img {
+    transform: scale(0.8);
+    margin-left: 16px;
+  }
+}
+@media (max-width: 375px) {
   .banner-title img {
     transform: scale(0.5);
     margin-left: 0;
   }
 }
+
 .areaSelect {
   margin-top: 16px;
   margin-bottom: 32px;
 }
-
 .areaSelect label {
   font-size: 24px;
   line-height: 30px;
   margin-right: 20px;
+}
+@media (max-width: 768px) {
+  .areaSelect label {
+    font-size: 16px;
+  }
+}
+@media (max-width: 375px) {
+  .areaSelect label {
+    font-size: 14px;
+    margin-right: 12px;
+  }
 }
 .areaSelect select {
   font-size: 18px;
@@ -152,15 +595,97 @@ a:hover {
   opacity: 0.75;
   padding: 10px 0 10px 18px;
 }
+@media (max-width: 768px) {
+  .areaSelect select {
+    font-size: 16px;
+    width: 273px;
+  }
+}
+@media (max-width: 375px) {
+  .areaSelect select {
+    font-size: 14px;
+    width: 260px;
+  }
+}
+
 .cards {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   color: #212529;
 }
+@media (max-width: 1024px) {
+  .cards {
+    margin-bottom: 84px;
+  }
+}
+@media (max-width: 568px) {
+  .cards {
+    margin-bottom: 40px;
+  }
+}
 .cards li {
-  width: 350px;
+  width: 30%;
   margin-bottom: 32px;
+}
+@media (max-width: 1024px) {
+  .cards li {
+    width: 48%;
+  }
+}
+@media (max-width: 568px) {
+  .cards li {
+    width: 100%;
+    margin-bottom: 16px;
+  }
+}
+.cards li img {
+  width: 100%;
+}
+.cards li .info {
+  padding: 16px 24px;
+  border: 1px solid #00000020;
+}
+@media (max-width: 768px) {
+  .cards li .info {
+    padding: 16px;
+  }
+}
+.cards li .info li {
+  width: 100%;
+  display: flex;
+  margin-bottom: 8px;
+}
+@media (max-width: 768px) {
+  .cards li .info li {
+    margin: 8px;
+  }
+}
+.cards li .info li p {
+  font-size: 20px;
+  line-height: 30px;
+}
+.cards li .info li p a {
+  color: #111619;
+}
+@media (max-width: 768px) {
+  .cards li .info li p {
+    font-size: 14px;
+    line-height: 21px;
+  }
+}
+.cards li .info li img {
+  width: 21px;
+  height: 21px;
+  margin-top: 5px;
+  margin-right: 12px;
+}
+@media (max-width: 768px) {
+  .cards li .info li img {
+    width: 20px;
+    height: 20px;
+    margin-top: 0;
+  }
 }
 .cards li button {
   background: #000;
@@ -168,6 +693,13 @@ a:hover {
   font-size: 19px;
   width: 100%;
   padding: 20px;
+  cursor: pointer;
+}
+@media (max-width: 768px) {
+  .cards li button {
+    font-size: 14px;
+    padding: 16px;
+  }
 }
 .cards li h3 {
   font-size: 24px;
@@ -175,207 +707,209 @@ a:hover {
   border: 1px solid #00000020;
   padding: 12px 24px;
 }
-.cards li img {
-  display: block;
-  width: 350px;
-  height: 224px;
-}
-.info {
-  border: 1px solid #00000020;
-}
-.info li {
-  display: flex;
-  margin: 16px 24px;
-}
-.info li p {
-  font-size: 20px;
-  line-height: 30px;
-  width: 260px;
-}
-.info li img {
-  width: 21px;
-  height: 21px;
-  margin-top: 5px;
-  margin-right: 12px;
-}
 @media (max-width: 768px) {
-  .container {
-    width: 690px;
-  }
-  .areaSelect label {
-    font-size: 16px;
-  }
-  .areaSelect select {
-    font-size: 16px;
-    width: 273px;
-  }
-  .info {
-    padding: 16px;
-  }
-  .cards li {
-    width: 330px;
-  }
   .cards li h3 {
     font-size: 16px;
     line-height: 24px;
     padding: 8px 202px 8px 8x;
   }
-  .cards li img {
-    width: 330px;
-    height: 164px;
-  }
-  .info li {
-    margin: 8px;
-  }
-  .info li p {
-    font-size: 14px;
-    line-height: 21px;
-    width: 250px;
-  }
-  .info li img {
-    width: 20px;
-    height: 20px;
-    margin-top: 0;
-  }
-  .cards li button {
-    font-size: 14px;
-    padding: 16px;
+}
+
+.page-btn {
+  display: flex;
+  width: 380px;
+  margin: 0 auto;
+  font-size: 19px;
+  line-height: 29px;
+  font-weight: 500;
+  margin-bottom: 165px;
+}
+@media (max-width: 768px) {
+  .page-btn {
+    margin-bottom: 104px;
   }
 }
 @media (max-width: 375px) {
-  .container {
-    width: 345px;
+  .page-btn {
+    width: 240px;
+    font-size: 12px;
+    line-height: 18px;
+    margin-bottom: 56px;
   }
+}
+.page-btn li a {
+  display: block;
+  padding: 10px 14px;
+  border: 1px solid #555555;
+  color: #555555;
+}
+@media (max-width: 375px) {
+  .page-btn li a {
+    padding: 8px;
+  }
+}
+.page-btn li a:hover {
+  background-color: #111619;
+  color: #fbf2f2;
+}
+.page-btn li:nth-child(3) a {
+  background-color: #111619;
+  color: #fbf2f2;
+}
+.page-btn li:last-child a {
+  background-color: #f2f2f2;
+}
+.page-btn li:last-child a:hover {
+  background-color: #111619;
+}
 
-  .areaSelect label {
-    font-size: 14px;
-    margin-right: 12px;
-  }
-  .areaSelect select {
-    font-size: 14px;
-    width: 260px;
+.footer {
+  padding: 40px;
+}
+@media (max-width: 375px) {
+  .footer {
+    padding: 9px;
+    position: relative;
   }
 }
 .footer-title {
   font-size: 16px;
   line-height: 24px;
-  padding-top: 48px;
+  display: flex;
+  justify-content: space-between;
 }
-.contact-info {
+@media (max-width: 568px) {
+  .footer-title .menu {
+    display: none;
+  }
+}
+.footer-title .icons {
+  display: flex;
+}
+@media (max-width: 568px) {
+  .footer-title .icons {
+    position: absolute;
+    right: 0;
+  }
+}
+@media (max-width: 375px) {
+  .footer-title .icons {
+    top: 35px;
+  }
+}
+.footer-title .icons li {
+  margin-left: 32px;
+}
+@media (max-width: 768px) {
+  .footer-title .icons li {
+    margin-left: 0;
+  }
+}
+.footer-title .icons li img {
+  max-width: 100%;
+}
+@media (max-width: 768px) {
+  .footer-title .icons li img {
+    max-width: 50%;
+  }
+}
+.footer .contact-info {
   padding-bottom: 22px;
   border-bottom: 1px solid #fff;
 }
-.contact-info li a {
+@media (max-width: 768px) {
+  .footer .contact-info {
+    margin-top: 24px;
+  }
+}
+.footer .contact-info li a {
   font-size: 36px;
   line-height: 54px;
   margin-left: 20px;
 }
-.contact-info li img {
+@media (max-width: 768px) {
+  .footer .contact-info li a {
+    font-size: 20px;
+    line-height: 30px;
+    margin-left: 15px;
+  }
+}
+@media (max-width: 568px) {
+  .footer .contact-info li a {
+    font-size: 16px;
+    margin-left: 7px;
+  }
+}
+.footer .contact-info li img {
   width: 100%;
   max-width: 36px;
   vertical-align: middle;
 }
-
+@media (max-width: 768px) {
+  .footer .contact-info li img {
+    width: 18px;
+  }
+}
 .footer-buttom {
   display: flex;
   justify-content: space-between;
-  padding-bottom: 40px;
 }
-.terms {
-  display: flex;
-  margin-top: 40px;
+@media (max-width: 568px) {
+  .footer-buttom {
+    flex-direction: column;
+  }
 }
-.terms li {
-  padding-left: 62px;
-}
-.copyright {
+.footer-buttom .copyright {
   margin-top: 24px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.copyright img {
-  margin-right: 38px;
-}
-
-.icons {
-  display: flex;
-}
-.icons li {
-  margin-left: 32px;
-}
-.icons li img {
-  max-width: 100%;
-}
-.footer-title {
-  display: flex;
-  justify-content: space-between;
-  padding-top: 48px;
-}
-@media (max-width: 768px) {
-  .copyright img {
-    display: none;
-  }
-  .contact-info {
-    margin-top: 24px;
-  }
-  .contact-info li a {
-    font-size: 20px;
-    line-height: 30px;
-    margin-left: 15px;
-  }
-  .contact-info li img {
-    width: 18px;
-  }
-  .icons li {
-    margin-left: 0;
-  }
-  .icons li img {
-    max-width: 50%;
-  }
-}
-@media (max-width: 375px) {
-  .footer {
-    position: relative;
-  }
-  .footer-title {
-    padding-top: 0 !important;
-  }
-  .footer-title .menu {
-    display: none;
-  }
-  .icons {
-    position: absolute;
-    right: 0;
-    top: 25px;
-  }
-  .copyright {
+@media (max-width: 568px) {
+  .footer-buttom .copyright {
     justify-content: start;
   }
-  .copyright img {
+}
+.footer-buttom .copyright img {
+  margin-right: 38px;
+}
+@media (max-width: 768px) {
+  .footer-buttom .copyright img {
+    display: none;
+  }
+}
+@media (max-width: 568px) {
+  .footer-buttom .copyright img {
     display: block;
     position: absolute;
     width: 46px;
     right: 9px;
-    bottom: 40px;
-    margin-right: 9px;
+    bottom: 10px;
   }
-  .copyright p {
+}
+@media (max-width: 568px) {
+  .footer-buttom .copyright p {
     font-size: 14px;
   }
-  .contact-info li a {
-    font-size: 16px;
-    margin-left: 7px;
-  }
-  .terms {
+}
+.footer-buttom .terms {
+  display: flex;
+  margin-top: 40px;
+}
+@media (max-width: 568px) {
+  .footer-buttom .terms {
     flex-direction: column;
     margin: 0;
   }
-  .terms li {
+}
+.footer-buttom .terms li {
+  padding-left: 62px;
+}
+@media (max-width: 568px) {
+  .footer-buttom .terms li {
     margin: 8px 0;
     padding-left: 0;
   }
-  .footer-buttom {
-    flex-direction: column;
-  }
 }
+
+/*# sourceMappingURL=style.css.map */
