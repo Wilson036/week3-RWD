@@ -4,12 +4,20 @@
 
 .container {
   margin: 0 auto;
-  max-width: 1200px;
+  max-width: 1100px;
+  @include large {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
   @include pad {
-    max-width: 690px;
+    max-width: 768px;
+  }
+  @include mobile {
+    padding-left: 15px;
+    padding-right: 15px;
   }
   @include small {
-    max-width: 345px;
+    max-width: 375px;
   }
 }
 .wrap {
@@ -44,6 +52,12 @@ a:hover {
     }
     a {
       display: block;
+      width: 80px;
+      height: 49px;
+      background-image: url('https://hexschool.github.io/webLayoutTraining1st/week3/logo.png');
+      text-indent: 101%;
+      overflow: hidden;
+      white-space: nowrap;
     }
   }
 }
@@ -86,7 +100,202 @@ a:hover {
     }
   }
 }
+.product-menu {
+  font-size: 42px;
+  line-height: 63px;
+  font-weight: 500;
+  display: flex;
+  justify-content: space-around;
+  @include desktop {
+    font-size: 32px;
+    line-height: 55px;
+  }
+  @include pad {
+    font-size: 28px;
+    line-height: 42px;
+  }
+  @include mobile {
+    font-size: 20px;
+    line-height: 30px;
+  }
+  @include small {
+    font-size: 14px;
+    line-height: 19px;
+  }
+  li {
+    flex: 1;
+    a {
+      border: 1px solid #dcdcdc;
+      display: block;
+      padding-bottom: 24px;
+      padding-top: 24px;
+      text-align: center;
+      color: $block;
+      img {
+        display: inline-block;
+        vertical-align: sub;
+        margin-right: 8px;
+        max-width: 100%;
+        @include desktop {
+          max-width: 40px;
+          max-height: 40px;
+        }
+        @include pad {
+          max-width: 32px;
+          max-height: 32px;
+        }
+        @include mobile {
+          max-width: 24px;
+          max-height: 24px;
+        }
+        @include small {
+          max-width: 15px;
+          max-height: 12px;
+          margin-right: 4px;
+        }
+      }
+    }
+    &:first-child {
+      a {
+        padding-bottom: 8px;
+        border-bottom: 16px solid red;
+        img {
+          vertical-align: unset;
+        }
+      }
+    }
+  }
+}
+.product {
+  &-banner {
+    display: flex;
+    height: 309px;
+    margin-bottom: 88px;
+    @include pad {
+      margin-bottom: 30px;
+    }
+    @include small {
+      height: 144px;
+    }
 
+    div {
+      background-position: center;
+      background-size: cover;
+      width: 50%;
+    }
+    div:first-child {
+      background-image: url('https://hexschool.github.io/webLayoutTraining1st/week3/banner-1.png');
+      margin-right: 30px;
+      @include desktop {
+        margin-right: 15px;
+      }
+      @include pad {
+        margin-right: 0;
+      }
+    }
+    div:last-child {
+      background-image: url('https://hexschool.github.io/webLayoutTraining1st/week3/banner-2.png');
+    }
+  }
+  &-title {
+    text-align: center;
+    font-weight: 500;
+    margin-bottom: 40px;
+    @include pad {
+      margin-bottom: 32px;
+    }
+    @include small {
+      margin-bottom: 20px;
+    }
+    h2 {
+      font-size: 42px;
+      line-height: 63px;
+      @include pad {
+        font-size: 32px;
+        line-height: 48px;
+      }
+      @include small {
+        font-size: 20px;
+        line-height: 26px;
+      }
+    }
+    h3 {
+      font-size: 32px;
+      line-height: 48px;
+      @include pad {
+        font-size: 24px;
+        line-height: 36px;
+      }
+      @include small {
+        font-size: 16px;
+        line-height: 22px;
+      }
+    }
+  }
+  &-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    li {
+      margin-bottom: 104px;
+      @include pad {
+        margin-bottom: 72px;
+      }
+      @include small {
+        margin-bottom: 32px;
+      }
+      img {
+        width: 255px;
+        height: 164px;
+        @include pad {
+          width: 330px;
+        }
+        @include small {
+          width: 345px;
+        }
+      }
+      .item {
+        display: flex;
+        justify-content: space-between;
+        font-size: 24px;
+        line-height: 36px;
+        font-weight: 500;
+        @include small {
+          font-size: 16px;
+          line-height: 30px;
+        }
+        p:first-child {
+          color: $block;
+        }
+        p:last-child {
+          color: $red;
+        }
+        &-color {
+          display: flex;
+          div {
+            width: 24px;
+            height: 24px;
+            border-radius: 4px;
+            @include small {
+              width: 16px;
+              height: 16px;
+            }
+          }
+          div:first-child {
+            background: #5f3e2d;
+            margin-right: 8px;
+            @include small {
+              margin-right: 4px;
+            }
+          }
+          div:last-child {
+            background: #b75929;
+          }
+        }
+      }
+    }
+  }
+}
 .banner {
   background: url($lg-banner) no-repeat;
   height: 304px;
@@ -102,7 +311,7 @@ a:hover {
     height: 143px;
     background-position: 10% 30%;
   }
-  .banner-title {
+  &-title {
     display: flex;
     align-items: flex-end;
     height: 100%;
@@ -173,11 +382,24 @@ a:hover {
   flex-wrap: wrap;
   justify-content: space-between;
   color: #212529;
+  @include large {
+    margin-bottom: 84px;
+  }
+  @include mobile {
+    margin-bottom: 40px;
+  }
   li {
-    width: 350px;
+    width: 30%;
     margin-bottom: 32px;
-    @include pad {
-      width: 330px;
+    @include large {
+      width: 48%;
+    }
+    @include mobile {
+      width: 100%;
+      margin-bottom: 16px;
+    }
+    img {
+      width: 100%;
     }
     .info {
       padding: 16px 24px;
@@ -195,6 +417,9 @@ a:hover {
         p {
           font-size: 20px;
           line-height: 30px;
+          a {
+            color: $block;
+          }
           @include pad {
             font-size: 14px;
             line-height: 21px;
@@ -236,39 +461,78 @@ a:hover {
         padding: 8px 202px 8px 8x;
       }
     }
-    img {
+  }
+}
+.page-btn {
+  display: flex;
+  width: 380px;
+  margin: 0 auto;
+  font-size: 19px;
+  line-height: 29px;
+  font-weight: 500;
+  margin-bottom: 165px;
+  @include pad {
+    margin-bottom: 104px;
+  }
+  @include small {
+    width: 240px;
+    font-size: 12px;
+    line-height: 18px;
+    margin-bottom: 56px;
+  }
+  li {
+    a {
       display: block;
-      width: 350px;
-      height: 224px;
-      @include pad {
-        width: 330px;
-        height: 164px;
+      padding: 10px 14px;
+      border: 1px solid #555555;
+      color: #555555;
+      @include small {
+        padding: 8px;
+      }
+      &:hover {
+        background-color: $block;
+        color: $white;
+      }
+    }
+  }
+  li:nth-child(3) {
+    a {
+      background-color: $block;
+      color: $white;
+    }
+  }
+  li:last-child {
+    a {
+      background-color: #f2f2f2;
+      &:hover {
+        background-color: $block;
       }
     }
   }
 }
-
 .footer {
   padding: 40px;
   @include small {
     padding: 9px;
     position: relative;
   }
-  .footer-title {
+  &-title {
     font-size: 16px;
     line-height: 24px;
     display: flex;
     justify-content: space-between;
     .menu {
-      @include small {
+      @include mobile {
         display: none;
       }
     }
     .icons {
       display: flex;
-      @include small {
+      @include mobile {
         position: absolute;
         right: 0;
+      }
+      @include small {
         top: 35px;
       }
       li {
@@ -301,7 +565,7 @@ a:hover {
           line-height: 30px;
           margin-left: 15px;
         }
-        @include small {
+        @include mobile {
           font-size: 16px;
           margin-left: 7px;
         }
@@ -316,10 +580,10 @@ a:hover {
       }
     }
   }
-  .footer-buttom {
+  &-buttom {
     display: flex;
     justify-content: space-between;
-    @include small {
+    @include mobile {
       flex-direction: column;
     }
     .copyright {
@@ -327,7 +591,7 @@ a:hover {
       display: flex;
       justify-content: center;
       align-items: center;
-      @include small {
+      @include mobile {
         justify-content: start;
       }
       img {
@@ -335,7 +599,7 @@ a:hover {
         @include pad {
           display: none;
         }
-        @include small {
+        @include mobile {
           display: block;
           position: absolute;
           width: 46px;
@@ -344,7 +608,7 @@ a:hover {
         }
       }
       p {
-        @include small {
+        @include mobile {
           font-size: 14px;
         }
       }
@@ -352,13 +616,13 @@ a:hover {
     .terms {
       display: flex;
       margin-top: 40px;
-      @include small {
+      @include mobile {
         flex-direction: column;
         margin: 0;
       }
       li {
         padding-left: 62px;
-        @include small {
+        @include mobile {
           margin: 8px 0;
           padding-left: 0;
         }
